@@ -26,6 +26,9 @@ class BlogsController < ApplicationController
     redirect_to "/blogs/#{@post.id}"
   end
 
+  def index
+    @posts = Post.all
+  end
   private
   def post_params
         # params.require(:key).permit(:filter)
