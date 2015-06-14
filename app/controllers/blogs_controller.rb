@@ -1,10 +1,11 @@
 class BlogsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def new
     @post = Post.new
   end
 
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def create
@@ -17,11 +18,11 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post.update_attributes(post_params)
     redirect_to "/blogs/#{@post.id}"
   end
@@ -31,7 +32,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post.destroy
     redirect_to blogs_url
   end
@@ -46,4 +47,8 @@ class BlogsController < ApplicationController
       :body
     )
   end
+
+  def set_post
+   @post = Post.find(params[:id])
+ end
 end

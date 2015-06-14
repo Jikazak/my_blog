@@ -1,6 +1,8 @@
+<div class="col-lg-12">
 <h1><%= @post.title %></h1>
 <p>カテゴリ：<%= @post.category %></p>
 <p>投稿日：<%= @post.created_at %></p>
 <p><%= @post.body %></p>
 <%= link_to '編集', edit_blog_path %>
-<%= link_to '削除', blog_path, method: :delete, data: { confirm: '本当に削除して良いですか?' } %>
+<%= link_to '削除', blog_path, method: :delete } %>
+</div>
