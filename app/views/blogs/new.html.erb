@@ -1,0 +1,16 @@
+<h1>ブログ投稿記事</h1>
+<%= form_for @post, url: { action: :create } do |f| %>
+  <p>
+    タイトル<br>
+    <%= f.text_field :title %>
+  </p>
+ <p>
+    カテゴリ<br>
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    本文<br>
+    <%= f.text_area :body %>
+  </p>
+<%= f.submit '登録する' %>
+<% end %>
