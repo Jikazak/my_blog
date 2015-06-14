@@ -1,5 +1,11 @@
-<% @posts.each do |post| %>
+<%= link_to '投稿する', new_blog_path %>
+<% @posts.each_with_index do |post, index| %>
+  <% if index >= 5 %>
+  <% break %>
+  <% else %>
   <h1><%= post.title %></h1>
-  <p><%= post.updated_at %>
-  <p><%= post.body %>
+  <p><%= post.updated_at %></p>
+  <p><%= post.body.truncate(50) %></p>
+  <% end %>
+  <% index += 1 %>
 <% end %>

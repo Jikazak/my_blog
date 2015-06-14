@@ -29,6 +29,14 @@ class BlogsController < ApplicationController
   def index
     @posts = Post.all
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to blogs_url
+  end
+
+
   private
   def post_params
         # params.require(:key).permit(:filter)
